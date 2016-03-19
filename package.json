@@ -1,0 +1,23 @@
+{
+  "name": "rocketbuilt-core",
+  "version": "1.0.0",
+  "description": "Super simple way for Coders & Designers to turn their static pages into dynamic sites. Simply upload your HTML files and RocketBuilt will return you the whole new web app that is ready for deployment.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RocketBuilt/rocketbuilt-core.git"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/RocketBuilt/rocketbuilt-core/issues"
+  },
+  "homepage": "https://github.com/RocketBuilt/rocketbuilt-core#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
