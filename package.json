@@ -18,6 +18,12 @@
   },
   "homepage": "https://github.com/RocketBuilt/rocketbuilt-core#readme",
   "dependencies": {
-    "express": "^4.13.4"
+    "aws-sdk": "^2.2.45",
+    "body-parser": "^1.15.0",
+    "errorhandler": "^1.4.3",
+    "express": "^4.13.4",
+    "morgan": "^1.7.0",
+    "multer": "^1.1.0",
+    "s3": "^4.4.0"
   }
 }
