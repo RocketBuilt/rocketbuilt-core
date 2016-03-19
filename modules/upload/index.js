@@ -27,15 +27,16 @@ router.post('/', function(req, res, next) {
   var s3obj = new AWS.S3({params: {Bucket: S3_BUCKET, Key: fileName}});
 
   s3obj.upload({Body: req})
-  	.on('httpUploadProgress', function(evt) { console.log(evt); })
-  	.send(function(err, data) {
-  		if (err) {
-  			next(err);
-  			return;
-  		}
+    .on('httpUploadProgress', function(evt) { console.log(evt); })
+    .send(function(err, data) {
+      if (err) {
+        next(err);
+        return;
+      }
 
-  		res.status(202).end();
-  	});
+      res.status(202).end();
+      next();
+    });
 });
 
 module.exports = router;
