@@ -8,7 +8,6 @@ import FileList from './components/FileList';
 
 window.RB = window.RB || {};
 
-
 var app = new Dispatcher();
 
 class FileStore extends ReduceStore
