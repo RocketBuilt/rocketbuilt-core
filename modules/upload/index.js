@@ -1,6 +1,5 @@
 var helpers = require('../../helpers');
 var express = require('express');
-var multer = require('multer');
 var router = express.Router();
 var zlib = require('zlib');
 var AWS = require('aws-sdk');

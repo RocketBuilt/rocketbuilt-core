@@ -1,3 +1,11 @@
+.webwrapper > *:hover {
+    cursor: pointer;
+    outline-style: solid;
+    outline-color: #0088cc;
+    outline-width: 2px;
+    outline-offset: 5px;
+}
+
 .sidebar {
     background: #FFF;
     box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.15);

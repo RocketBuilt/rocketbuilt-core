@@ -1,10 +1,8 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var multer = require('multer');
 var errorHandler = require('errorhandler');
 var logger = require('morgan');
-var mustacheExpress = require('mustache-express');
 var swig = require('swig');
 
 app.use(logger('dev'));
