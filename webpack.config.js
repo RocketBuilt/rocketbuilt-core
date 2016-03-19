@@ -6,7 +6,7 @@ module.exports = {
 	context: path.resolve(__dirname, 'src/'),
 
 	entry: {
-		interface: ['webpack-hot-middleware/client', './interface'],
+		interface: './interface',
 	},
 
 	output: {
