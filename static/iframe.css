@@ -1,0 +1,12 @@
+div:hover,
+p:hover,
+span:hover,
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover,
+a:hover, strong:hover, em:hover,
+[data-rbid] {
+  cursor: pointer;
+  outline-style: solid;
+  outline-color: #0088cc;
+  outline-width: 2px;
+  outline-offset: 5px;
+}

@@ -29,7 +29,7 @@ class FileStore extends ReduceStore
   reduce(state, action) {
     switch (action.type) {
 
-      case 'SELECT':
+      case 'SELECT_FILE':
 
         if (action.file.active) {
           return state;
@@ -52,6 +52,20 @@ class FileStore extends ReduceStore
 
 var fileStore = new FileStore(app);
 
+function attach() {
+  var iframe = document.querySelector('.webwrapper > iframe');
+  var activeFile = _.find(fileStore.getState(), 'active');
+  iframe.src = '/example/' + _.get(activeFile, 'name', 'index.html');
+
+  iframe.onload = function() {
+    addScript('/dist/controller.js', iframe.contentWindow.document.body);
+  };
+}
+
+attach();
+
+fileStore.addListener(attach);
+
 class FileListContainer extends React.Component {
   static getStores() {
     return [fileStore];
@@ -65,19 +79,25 @@ class FileListContainer extends React.Component {
 
   render() {
     return <FileList files={this.state.files} onFileSelect={(file) => app.dispatch({
-      type: 'SELECT',
+      type: 'SELECT_FILE',
       file
     })} />;
   }
 }
-
-fileStore.addListener(() => {
-  var activeFile = _.find(fileStore.getState(), 'active');
-  document.querySelector('.webwrapper > iframe').src = '/example/' + _.get(activeFile, 'name', 'index.html');
-});
 
 const FileListUI = Container.create(FileListContainer);
 
 RB.init = function(id) {
   ReactDOM.render(<FileListUI />, document.querySelector('.pages'));
 };
+
+RB.handle = function(action) {
+  console.log('Event from iframe');
+  app.dispatch(action);
+};
+
+function addScript(src, target) {
+  var s = document.createElement('script');
+  s.setAttribute('src', src);
+  target.appendChild(s);
+}

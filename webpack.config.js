@@ -6,7 +6,8 @@ module.exports = {
 	context: path.resolve(__dirname, 'src/'),
 
 	entry: {
-		interface: './interface',
+    interface: './interface',
+		controller: './controller',
 	},
 
 	output: {
